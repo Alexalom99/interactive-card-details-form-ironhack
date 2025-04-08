@@ -13,7 +13,7 @@ const holderNumber = document.querySelector("#holder-card-number");
 const holderMonth = document.querySelector("#exp-date");
 const holderYear = document.querySelector("#mm-yy");
 const holderCVC = document.querySelector("#cvc");
-const btn = document.querySelector("#confirm-btn");
+const form = document.querySelector("form");
 const sectionSuccess = document.querySelector("#success-container");
 const sectionForm = document.querySelector("#form-elements")
 
@@ -37,7 +37,9 @@ holderCVC.addEventListener("change", function () {
     cardCVC.textContent = this.value;
 })
 
-btn.addEventListener("click", function () {
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
     sectionSuccess.style.display = "flex";
     sectionForm.style.display = "none";
 })
